@@ -29,8 +29,8 @@ jobs:
           
       - name: Docker build
         run: |
-          docker build ./Docker -t tiagopereyra/hello-world:dev
+          docker build ./Docker -t tiagopereyra/hello-world:prod
           
       - name: Docker push
         run: |
-          docker push tiagopereyra/hello-world:dev
+          docker push tiagopereyra/hello-world:prod
