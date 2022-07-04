@@ -2,9 +2,6 @@ name: test
 
 on:
   pull_request:
-    branches:
-     -main
-     -desarrollo
     types: [opened]
     
 jobs: 
