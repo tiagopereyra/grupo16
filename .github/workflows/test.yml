@@ -1,9 +1,10 @@
 name: test  
 
 on:
-  push:
+  pull_request:
     branches:
      -main
+     -desarrollo
     
 jobs: 
  run-tests:
