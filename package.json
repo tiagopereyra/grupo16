@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest"
+    "test": "jest --no-cache  --detectOpenHandles --runInBand --forceExit"
   },
   "repository": {
     "type": "git",
