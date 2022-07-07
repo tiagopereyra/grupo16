@@ -1,8 +1,11 @@
-FROM node:carbon-alpine
-RUN mkdir /my_app
-COPY app.js /my_app
-COPY package*.json /my_app
-WORKDIR /my_app
+FROM node:8.16.1-alpine
+WORKDIR /app
+ARG GITHASH
+ENV GITHASH=$GIT_COMMIT
+ARG DATE
+ENV DATE = $DATE
+COPY package*.json /app
 RUN npm install
-EXPOSE 3001
-CMD node app.js
+COPY . /app
+CMD node index.js
+EXPOSE 3000

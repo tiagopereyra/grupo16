@@ -39,3 +39,5 @@ jobs:
           tags: |
             docker.pkg.github.com/${{ github.repository }}/hello-world:${{ steps.extract_branch.outputs.branch }}
             docker.pkg.github.com/${{ github.repository }}/hello-world:${{ steps.extract_branch.outputs.branch }}
+
+
