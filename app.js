@@ -2,12 +2,12 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-const date = process.env.DATE
-const hash = process.env.GITCOMMIT
+const date = {}
+const hash = {}
 
 app.get('/', (req, res) => {    
 
-res.send("El fortin campeon 2022!" + hash)
+res.send("El fortin campeon 2022!" + " " + "{{date}}" + " " + "{{gitHash}}")
 
 })
 
