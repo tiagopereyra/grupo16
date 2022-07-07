@@ -35,17 +35,24 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
         
-      - name: Find and Replace
+      - name: Find and Replace date
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: "{{date}}"
           replace: "${{steps.date.outputs.date}}"
           regex: false
 
+      - name: Find and Replace hash
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "{{githash}}"
+          replace: "${{github.sha}}"
+          regex: false
+
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
-          context: ./Docker
+          context: ./
           push: true
           tags: |
             docker.pkg.github.com/${{ github.repository }}/hello-world:${{ steps.extract_branch.outputs.branch }}
