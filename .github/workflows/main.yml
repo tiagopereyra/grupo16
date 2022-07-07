@@ -45,7 +45,7 @@ jobs:
       - name: Find and Replace hash
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: "{{githash}}"
+          find: "{{gitHash}}"
           replace: "${{github.sha}}"
           regex: false
 
